@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "musicgen-template"
+version = "0.1.0"
+description = "Template to generate reproducible music with Meta’s MusicGen"
+authors = ["Asterios Raptis <asteri.raptis@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [
+    { include = "scripts" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+torchaudio = "2.1.0"
+numpy = "^1.26.4"
+audiocraft = { git = "https://github.com/facebookresearch/audiocraft.git" }
+
+[tool.poetry.scripts]
+init-music-project = "scripts.init_music_project:main"
+generate-music = "scripts.generate_music:main"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
